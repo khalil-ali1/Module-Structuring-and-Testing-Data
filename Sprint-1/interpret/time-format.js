@@ -1,7 +1,7 @@
 const movieLength = 8784; // length of movie in seconds
 
-const remainingSeconds = movieLength % 60;
-const totalMinutes = (movieLength - remainingSeconds) / 60;
+const remainingSeconds = movieLength % 60;  
+const totalMinutes = (movieLength - remainingSeconds) / 60; 
 
 const remainingMinutes = totalMinutes % 60;
 const totalHours = (totalMinutes - remainingMinutes) / 60;
@@ -22,3 +22,10 @@ console.log(result);
 // e) What do you think the variable result represents? Can you think of a better name for this variable?
 
 // f) Try experimenting with different values of movieLength. Will this code work for all values of movieLength? Explain your answer
+
+// a) 6 times
+// b) 1 time
+// c) the reminder after applying division (movieLength / 60) which equals to 24
+// d) number of minutes in movieLength
+// e) movieDuration
+// f) yes it will work for all real positive values of movieLength
