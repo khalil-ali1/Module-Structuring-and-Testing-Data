@@ -1,8 +1,8 @@
 // Predict and explain first...
-
+//convert num to string and return the last digit
 const num = 103;
-
-function getLastDigit() {
+//num is a constant value,we should pass it as an argument to the getLastDigit() function.
+function getLastDigit(num) {
   return num.toString().slice(-1);
 }
 
