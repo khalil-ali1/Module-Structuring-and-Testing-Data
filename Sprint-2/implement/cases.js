@@ -13,3 +13,13 @@
 
 // You will need to come up with an appropriate name for the function
 // Use the string documentation to help you find a solution
+
+function UPPER_SNAKE_CASE(string){
+    result= string.split(" ").join("_").toUpperCase();
+    return result;
+}
+console.log(UPPER_SNAKE_CASE("hello word"))
+
+//.split(" ") : splits into two arrays["hello","word"]
+//.join ("_"): combines the two arrays by "_"
+//.toUpperCase() : changes to upper case. 
