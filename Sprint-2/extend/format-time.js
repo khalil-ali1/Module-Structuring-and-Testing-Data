@@ -3,6 +3,12 @@
 
 function formatAs12HourClock(time) {
   const hours = Number(time.slice(0, 2));
+  if (hours == 00) {
+    return `12:00 am`;
+  }
+  if (hours == 12) {
+    return `12:00 pm`;
+  }
   if (hours > 12) {
     return `${hours - 12}:00 pm`;
   }
@@ -22,3 +28,8 @@ console.assert(
   currentOutput2 === targetOutput2,
   `current output: ${currentOutput2}, target output: ${targetOutput2}`
 );
+console.log(formatAs12HourClock("08:00"))
+console.log(formatAs12HourClock("23:00"))
+console.log("Edge Cases : ")
+console.log("MIDNIGHT : " + formatAs12HourClock("00:00"))
+console.log("MIDDAY : " +formatAs12HourClock("12:00"))
