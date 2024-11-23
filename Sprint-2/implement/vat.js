@@ -8,3 +8,12 @@
 // Given a number,
 // When I call this function with a number
 // it returns the new price with VAT added on
+
+
+function totalPriceFinder(price) {
+    const totalPrice=1.2*price;
+    console.log(totalPrice);
+    return totalPrice;
+}
+totalPriceFinder(50)
+totalPriceFinder(100)
