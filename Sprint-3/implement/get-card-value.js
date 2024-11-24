@@ -39,7 +39,7 @@ function getCardValue(card){
     else if(rank==="A")
         return 11;
     else
-        return "Invalid card rank.";
+    throw new Error("Invalid card rank.");;
 }
 console.log(getCardValue("7♠")); 
 console.log(getCardValue("A♦")); 
