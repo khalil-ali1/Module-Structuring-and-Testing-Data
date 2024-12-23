@@ -1,4 +1,32 @@
 // Implement a function isValidTriangle
+function isValidTriangle(a,b,c) {
+    if ( a>0 && b>0 && c>0){
+    if ((a+b)>c)
+    return true;
+    else
+    return false;
+    }
+    else 
+    throw new Error (`a triangle cannot have zero or negative side lengths`); 
+}
+
+function assertion(output,expectedOutput) {
+    console.assert(output === expectedOutput,
+    `Expected ${output} to equal ${expectedOutput}` )
+}
+const firstState = isValidTriangle(1,2,3)
+assertion(firstState,false)
+
+const secondState = isValidTriangle(3,3,3)
+assertion(secondState,true)
+
+try{
+const thirdState = isValidTriangle(0,-2,3)
+}
+catch (error) {
+    console.log(error.message);
+  }
+
 // Terms
 // the Triangle Inequality says: the sum of any two sides is always greater than the third side.
 // practical examples:
