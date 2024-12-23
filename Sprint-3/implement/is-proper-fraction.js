@@ -1,6 +1,39 @@
 // You wil need to implement a function isProperFraction
+function isProperFraction (numerator, denominator){
+    if ( denominator === 0 )
+        throw new Error (`Denominator cannot be zero`);
+    else if (Math.abs(numerator) < denominator)
+        return true;
+    else if (numerator > denominator)
+        return false;
+    else if (numerator == denominator)
+        return false;
+    }
 // You need to write assertions for your function to check it works in different cases
+function assertion (output, expectedOutput){
+    console.assert(output === expectedOutput,
+        `Expected ${output} to equal ${expectedOutput}`
+    )
+}
 
+const numeratorLessThanDenominator = isProperFraction(2,3)
+assertion(numeratorLessThanDenominator,true)
+
+const numeratorGreaterThanDenominator = isProperFraction(5,2)
+assertion(numeratorGreaterThanDenominator,false)
+
+const numeratorEqualsDenominator = isProperFraction(3,3)
+assertion(numeratorEqualsDenominator,false)
+
+const numeratorIsNegative = isProperFraction(-4,7)
+assertion(numeratorIsNegative,true)
+
+try {
+    isProperFraction(3, 0);
+  } catch (error) {
+    console.log(error.message);
+  }
+  
 // Terms:
 // Fractions: https://www.bbc.co.uk/bitesize/topics/zt9n6g8/articles/zjxpp4j
 // Written here like this: 1/2 == Numerator/Denominator
@@ -32,8 +65,4 @@
 // target output: false
 // Explanation: The fraction 3/3 is not a proper fraction because the numerator is equal to the denominator. The function should return false.
 // These acceptance criteria cover a range of scenarios to ensure that the isProperFraction function handles both proper and improper fractions correctly and handles potential errors such as a zero denominator.
-function isProperFraction (numerator, denominator){
-    if ( denominator === 0 )
-        throw new Error("Error (Denominator cannot be zero)");
-    }
-    
+

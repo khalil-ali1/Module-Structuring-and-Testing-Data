@@ -31,7 +31,7 @@
 // Then it should throw an error indicating "Invalid card rank."
 
 function getCardValue(card){
-    const rank = card.slice(0, -1);
+    let rank = card.slice(0, -1);
     if (rank>=2 && rank<=9)
         return Number(rank)
     else if(rank==="10" || rank==="J"  || rank==="Q" || rank==="K")
@@ -39,10 +39,29 @@ function getCardValue(card){
     else if(rank==="A")
         return 11;
     else
-    throw new Error("Invalid card rank.");;
+        throw new Error(`Invalid card rank.`)
 }
-console.log(getCardValue("7♠")); 
-console.log(getCardValue("A♦")); 
-console.log(getCardValue("K♣")); 
-console.log(getCardValue("10♥")); 
-console.log(getCardValue("X♠"));  
+ function assertion(output,expectedOutput) {
+    console.assert(
+        output === expectedOutput,
+        `Expected ${output} to equal ${expectedOutput}`
+    )
+}
+const sevenOfHearts = getCardValue("7♥");
+assertion (sevenOfHearts,7)
+
+const aceOfDiamonds = getCardValue("A♦")
+assertion (aceOfDiamonds,11)
+
+const kingOfClubs = getCardValue("K♣")
+assertion (kingOfClubs,10)
+
+const tenOfHearts = getCardValue("10♥")
+assertion ( tenOfHearts,10)
+
+
+try {
+    const other = getCardValue("X♠")
+  } catch (error) {
+    console.log(error.message);
+  }
