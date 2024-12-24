@@ -1,4 +1,25 @@
 // The rotateCharacter function takes a character and a shift value as input.
+
+
+    function rotateCharacter (character , shift){                                   //character:character input , shift:how many indexes to shift the character
+    const code = character.charCodeAt(0);                                           //returns the ASCII code for the character
+    const rotateInAlphabet = (code, base) => ((code - base + shift) % 26) + base;   //26: number of english alphabets
+                                                                                    //base: the starting point of character within the ASCII code.
+                                                                                    // For uppercase letters: base is 65 (the ASCII code point of 'A').
+                                                                                    // For lowercase letters: base is 97 (the ASCII code point of 'a').
+
+    if (code >= 97 && code <= 122) {                                                //(97 <=> 122) uppercase range in ASCII code 
+        return String.fromCharCode(rotateInAlphabet(code, 97));                     //(65 <=> 90)  lowercase range in ASCII code 
+      }
+
+    else if (code >= 65 && code <= 90) {
+        return String.fromCharCode(rotateInAlphabet(code, 65));
+      }
+    else
+    return character;
+}
+
+
 // If the character is a letter (either uppercase or lowercase),
 // it rotates the character by the specified shift value within the alphabet,
 // considering wrapping around if necessary. Non-letter characters are returned unchanged.
