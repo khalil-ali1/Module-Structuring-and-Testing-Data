@@ -9,7 +9,7 @@
 // When the repeat function is called with these inputs,
 // Then it should repeat the str count times and return a new string containing the repeated str values.
 
-// case: handle Count of 1:
+// case: handle Count of 1:hqre
 // Given a target string str and a count equal to 1,
 // When the repeat function is called with these inputs,
 // Then it should return the original str without repetition, ensuring that a count of 1 results in no repetition.
